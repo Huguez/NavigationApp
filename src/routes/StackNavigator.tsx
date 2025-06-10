@@ -1,24 +1,8 @@
-import { createStackNavigator, StackNavigationOptions, StackNavigationProp } from "@react-navigation/stack"
+import { createStackNavigator } from "@react-navigation/stack"
 import { HomeScreen, ProductScreen, ProductsScreen, SettingsScreen } from "../screens"
-import { ParamListBase, RouteProp } from "@react-navigation/native";
-
-export type RootStackParam = {
-   Home: undefined;
-   Product: { id: number; name: string };
-   Products: undefined;
-   Settings: undefined;
-}
+import { type RootStackParam, type SettingsNavigation } from "../types";
 
 const Stack = createStackNavigator<RootStackParam>()
-
-interface myProps {
-   route: RouteProp<ParamListBase, string>;
-   navigation: StackNavigationProp<ParamListBase, string, undefined>;
-   theme: ReactNavigation.Theme;
-}
-
-type SettingsNavigation = StackNavigationOptions | ((props: myProps ) => StackNavigationOptions) | undefined;
-
 
 export const StackNavigator = () => {
 

@@ -1,0 +1,20 @@
+import { type ParamListBase, type RouteProp } from "@react-navigation/native";
+import { type StackNavigationOptions, type StackNavigationProp } from "@react-navigation/stack";
+import { type DrawerNavigationOptions } from "@react-navigation/drawer"
+
+export interface myProps {
+   route: RouteProp<ParamListBase, string>;
+   navigation: StackNavigationProp<ParamListBase, string, undefined>;
+   theme: ReactNavigation.Theme;
+}
+
+export type RootStackParam = {
+   Home: undefined;
+   Product: { id: number; name: string };
+   Products: undefined;
+   Settings: undefined;
+}
+
+export type SettingsNavigation = StackNavigationOptions | ((props: myProps ) => StackNavigationOptions) | undefined;
+
+export type SettingsSideNavigation = DrawerNavigationOptions | ((props: myProps ) => DrawerNavigationOptions) | undefined;;
