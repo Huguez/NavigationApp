@@ -1,7 +1,8 @@
-import { useNavigation } from "@react-navigation/native"
-import { FlatList, FlatListProps, Text, View } from "react-native"
+import { type NavigationProp, useNavigation } from "@react-navigation/native"
+import { FlatList, Text, View } from "react-native"
 import { globalStyles } from "../../theme"
 import { Button } from "../../components"
+import { type RootStackParam } from "../../routes"
 
 const items = [
    {  id: 1, name: 'takos 1' },
@@ -13,32 +14,18 @@ const items = [
    {  id: 7, name: 'takos 7' },
 ]
 
-
-
-interface renderProp { 
-   item: { id: number; name: string; };
-   index: number;
-   reparators: {
-      highlight: () => void;
-      unhighlight: () => void;
-      updateProps: ( select: 'leading' | 'trailing', newProps: any) => void;
-   }
-};
-
 const ProductsScreen = () => {
    
-   const navigation = useNavigation()
+   const navigation = useNavigation<NavigationProp<RootStackParam>>()
 
    const handleRenderItem = ({ item }: { item: { id: number; name: string; } } ) => {
 
       return <View>
-
          <Button 
             type={'primary'} 
-            onClick={() => navigation.navigate( "Product" as never )} 
+            onClick={() => navigation.navigate( 'Product', { ...item } )} // { product: item }
             label={ item.name } 
          />
-
       </View>
    }
 
@@ -51,12 +38,10 @@ const ProductsScreen = () => {
             renderItem={ handleRenderItem }
              keyExtractor={(item) => item.id.toString()}
          />
-
          
-
          <Button 
             type={'primary'} 
-            onClick={() => navigation.navigate( "Settings" as never )} 
+            onClick={() => navigation.navigate( "Settings" )} 
             label={ "Settings" } 
          />
 

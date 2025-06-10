@@ -2,7 +2,14 @@ import { createStackNavigator, StackNavigationOptions, StackNavigationProp } fro
 import { HomeScreen, ProductScreen, ProductsScreen, SettingsScreen } from "../screens"
 import { ParamListBase, RouteProp } from "@react-navigation/native";
 
-const Stack = createStackNavigator()
+export type RootStackParam = {
+   Home: undefined;
+   Product: { id: number; name: string };
+   Products: undefined;
+   Settings: undefined;
+}
+
+const Stack = createStackNavigator<RootStackParam>()
 
 interface myProps {
    route: RouteProp<ParamListBase, string>;
@@ -11,6 +18,7 @@ interface myProps {
 }
 
 type SettingsNavigation = StackNavigationOptions | ((props: myProps ) => StackNavigationOptions) | undefined;
+
 
 export const StackNavigator = () => {
 

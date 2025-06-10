@@ -1,25 +1,25 @@
-import { Pressable, Text, View } from "react-native"
+import { View } from "react-native"
 import { globalStyles } from "../../theme";
-import { useNavigation } from "@react-navigation/native";
+import { type NavigationProp, useNavigation } from "@react-navigation/native";
 import { Button } from "../../components";
+import { type RootStackParam } from "../../routes";
 
 const HomeScreen = () => {
 
-   const navigation = useNavigation()
-
+   const navigation = useNavigation<NavigationProp<RootStackParam>>()
 
    return (
       <View style={ globalStyles.container }>
 
          <Button 
             type={'primary'} 
-            onClick={ () => navigation.navigate( "Products" as never)  } 
+            onClick={ () => navigation.navigate( 'Products' )  } 
             label={ "Products" } 
          />
 
          <Button 
             type={'primary'} 
-            onClick={ () => navigation.navigate( "Settings" as never)  } 
+            onClick={ () => navigation.navigate( "Settings" )  } 
             label={ "Settings" } 
          />
 
