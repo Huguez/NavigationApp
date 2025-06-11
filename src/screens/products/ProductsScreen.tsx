@@ -20,7 +20,7 @@ const ProductsScreen = () => {
 
    const handleRenderItem = ({ item }: { item: { id: number; name: string; } } ) => {
 
-      return <View>
+      return <View style={ { marginVertical: 5 } } >
          <Button 
             type={'primary'} 
             onClick={() => navigation.navigate( 'Product', { ...item } )} // { product: item }

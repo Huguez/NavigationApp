@@ -11,14 +11,13 @@ const HomeScreen = () => {
    const navigation = useNavigation<NavigationProp<RootStackParam>>()
 
    useEffect( () => {
-
       const menu = dimensions.width <= 750 ? {
          headerLeft : () =>  <>
             <Pressable onPress={ () => navigation.dispatch( DrawerActions.toggleDrawer ) }>
                <Text> Menu </Text>
             </Pressable>
          </>
-      } :  { headerLeft: () => null } 
+      } :  { headerLeft: () => null }
 
       navigation.setOptions( menu )
 

@@ -43,7 +43,7 @@ const drawerContent = (props: DrawerContentComponentProps): ReactNode => {
       <View style={{
          height: 200,
          backgroundColor: globalColor.primary,
-         margin: 30,
+         marginVertical: 5,
          borderRadius: 50,
       }}>
       </View>

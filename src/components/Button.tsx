@@ -9,8 +9,6 @@ interface props{
 }
 
 export const Button = ( { onClick, label, type }: props ) => {
-   
-   
 
    return (
       <Pressable onPress={onClick} style={ [ globalStyles.btn, globalStyles[type] ] }>
