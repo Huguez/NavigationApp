@@ -21,11 +21,13 @@ export const TabNavigation = () => {
       },
       tabBarLabelStyle: {
          marginBottom: 5,
+         color: globalColor.primary,
       },
       tabBarStyle: {
          elevation: 0,
          borderWidth: 0,
          borderColor: 'transparent'
+         
       }
    }
    
@@ -33,18 +35,18 @@ export const TabNavigation = () => {
       <Tab.Navigator screenOptions={ settings }>
          <Tab.Screen 
             name="Tab1" 
-            options={{ tabBarIcon: ({color}) => (<Text style={{color}}>1</Text>),  title: "thing 1" }} 
+            options={{ tabBarIcon: () => (<Text style={{color: globalColor.primary}}>1</Text>),  title: "thing 1" }} 
             component={ Tab1Screen } 
          />
          <Tab.Screen 
             name="Tab2" 
-            options={{ tabBarIcon: ({color}) => (<Text style={{color}}>2</Text>),  title: "thing 2" }} 
+            options={{ tabBarIcon: () => (<Text style={{color: globalColor.primary}}>2</Text>),  title: "thing 2" }} 
             component={ Tab2Screen } 
          />
          <Tab.Screen 
             name="MaterialTopTabs" 
             options={{ 
-               tabBarIcon: ({color}) => (<Text style={{color}}>T</Text>),
+               tabBarIcon: () => (<Text style={{color: globalColor.primary}}>T</Text>),
                header: () => <CustomHeader title="MaterialTopTabs" />
              }} 
             component={ MaterialTopTabNavigation } 

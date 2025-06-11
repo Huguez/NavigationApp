@@ -1,5 +1,7 @@
 import { DrawerActions, useNavigation } from "@react-navigation/native";
 import { Pressable, StyleSheet, Text, View } from "react-native";
+import Icon from '@react-native-vector-icons/material-icons';
+import { globalColor } from "../theme";
 
 export function CustomHeader({ title }: { title: string }) {
    
@@ -10,7 +12,7 @@ export function CustomHeader({ title }: { title: string }) {
          <Pressable 
             style={ styles.btn }
             onPress={ () => navigation.dispatch( DrawerActions.toggleDrawer ) }>
-            <Text>Menu</Text>
+            <Icon name="menu" color={ globalColor.primary } size={ 35 } />
          </Pressable>
          
          <Text style={styles.title}>{title}</Text>

@@ -4,13 +4,13 @@ import { NavigationContainer } from "@react-navigation/native"
 import { enableScreens } from 'react-native-screens';
 import { SideNavigator } from './routes';
 
-
 enableScreens();
+
 
 function App(): React.JSX.Element {
 
   return (
-    <NavigationContainer>
+    <NavigationContainer >
       <SideNavigator />
     </NavigationContainer>
   );

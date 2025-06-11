@@ -15,6 +15,9 @@ export const MaterialTopTabNavigation = () => {
             marginBottom: 10,
             fontSize: 25,
          },
+         tabBarIndicatorStyle: {
+            backgroundColor: globalColor.primary,
+         },
          tabBarItemStyle: {},
          tabBarStyle: {
             elevation: 0,

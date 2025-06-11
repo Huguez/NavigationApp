@@ -1,9 +1,10 @@
-import { Pressable, Text, useWindowDimensions, View } from "react-native"
+import { Pressable, useWindowDimensions, View } from "react-native"
 import { useEffect } from "react";
-import { globalStyles } from "../../theme";
+import { globalColor, globalStyles } from "../../theme";
 import { DrawerActions, type NavigationProp, useNavigation } from "@react-navigation/native";
 import { type RootStackParam } from "../../types";
 import { Button } from "../../components";
+import Icon from '@react-native-vector-icons/material-icons';
 
 const HomeScreen = () => {
 
@@ -14,7 +15,7 @@ const HomeScreen = () => {
       const menu = dimensions.width <= 750 ? {
          headerLeft : () =>  <>
             <Pressable onPress={ () => navigation.dispatch( DrawerActions.toggleDrawer ) }>
-               <Text> Menu </Text>
+               <Icon name="menu" color={ globalColor.primary } size={ 35 } />
             </Pressable>
          </>
       } :  { headerLeft: () => null }
@@ -25,7 +26,7 @@ const HomeScreen = () => {
 
    return (
       <View style={ globalStyles.container }>
-
+         
          <Button 
             type={'primary'} 
             onClick={ () => navigation.navigate( 'Products' )  } 
