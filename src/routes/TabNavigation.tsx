@@ -3,7 +3,6 @@ import { Tab1Screen, Tab2Screen } from "../screens"
 import { RootTabParam } from "../types"
 import { settingsTabNavigation } from "../types/navigationTypes"
 import { globalColor } from "../theme"
-import { Text, } from "react-native"
 import { MaterialTopTabNavigation } from "."
 import { CustomHeader } from "../components"
 import Icon from "@react-native-vector-icons/material-icons"
@@ -22,7 +21,6 @@ export const TabNavigation = () => {
       },
       tabBarLabelStyle: {
          marginBottom: 5,
-         color: globalColor.primary,
          color: globalColor.primary,
       },
       tabBarStyle: {
