@@ -1,2 +1,3 @@
 export { StackNavigator } from "./StackNavigator";
-export type { RootStackParam } from "./StackNavigator"
+export { TabNavigation } from "./TabNavigation"
+export { SideNavigator } from "./SideNavigator"

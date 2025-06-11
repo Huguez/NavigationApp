@@ -1,15 +1,11 @@
 import { ReactNode } from "react";
-import { Text, useWindowDimensions, View } from "react-native";
+import { useWindowDimensions, View } from "react-native";
 import { createDrawerNavigator, DrawerContentComponentProps, DrawerContentScrollView, DrawerItemList } from "@react-navigation/drawer"
 import { ProfileScreen, } from "../screens";
-import { StackNavigator } from "../routes";
-import { type SettingsSideNavigation } from "../types";
+import { StackNavigator, TabNavigation } from "../routes";
+import { RootSideParam, type SettingsSideNavigation } from "../types";
 import { globalColor } from "../theme";
 
-export type RootSideParam = {
-   StackNavigator: undefined;
-   Profile: undefined;   
-}
 
 const Drawer = createDrawerNavigator<RootSideParam>();
 
@@ -31,6 +27,7 @@ export const SideNavigator = () => {
    return (
       <Drawer.Navigator screenOptions={ settings } drawerContent={ drawerContent }>
          <Drawer.Screen name="StackNavigator" component={StackNavigator} />
+         <Drawer.Screen name="Tabs" component={ TabNavigation } />
          <Drawer.Screen name="Profile" component={ ProfileScreen }  />
       </Drawer.Navigator>
    )

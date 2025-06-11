@@ -1,6 +1,7 @@
 import { type ParamListBase, type RouteProp } from "@react-navigation/native";
 import { type StackNavigationOptions, type StackNavigationProp } from "@react-navigation/stack";
 import { type DrawerNavigationOptions } from "@react-navigation/drawer"
+import { BottomTabNavigationOptions } from "@react-navigation/bottom-tabs";
 
 export interface myProps {
    route: RouteProp<ParamListBase, string>;
@@ -15,6 +16,21 @@ export type RootStackParam = {
    Settings: undefined;
 }
 
+
+export type RootSideParam = {
+   StackNavigator: undefined;
+   Tabs: undefined;
+   Profile: undefined;   
+}
+
+export type RootTabParam = {
+   Tab1: undefined;
+   Tab2: undefined;
+   Tab3: undefined;
+}
+
 export type SettingsNavigation = StackNavigationOptions | ((props: myProps ) => StackNavigationOptions) | undefined;
 
-export type SettingsSideNavigation = DrawerNavigationOptions | ((props: myProps ) => DrawerNavigationOptions) | undefined;;
+export type SettingsSideNavigation = DrawerNavigationOptions | ((props: myProps ) => DrawerNavigationOptions) | undefined;
+
+export type settingsTabNavigation = BottomTabNavigationOptions | ((props: myProps ) => BottomTabNavigationOptions) | undefined;
