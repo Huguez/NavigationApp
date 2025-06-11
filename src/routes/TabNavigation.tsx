@@ -6,6 +6,7 @@ import { globalColor } from "../theme"
 import { Text, } from "react-native"
 import { MaterialTopTabNavigation } from "."
 import { CustomHeader } from "../components"
+import Icon from "@react-native-vector-icons/material-icons"
 
 const Tab = createBottomTabNavigator<RootTabParam>()
 
@@ -22,11 +23,13 @@ export const TabNavigation = () => {
       tabBarLabelStyle: {
          marginBottom: 5,
          color: globalColor.primary,
+         color: globalColor.primary,
       },
       tabBarStyle: {
          elevation: 0,
          borderWidth: 0,
          borderColor: 'transparent'
+         
          
       }
    }
@@ -35,18 +38,18 @@ export const TabNavigation = () => {
       <Tab.Navigator screenOptions={ settings }>
          <Tab.Screen 
             name="Tab1" 
-            options={{ tabBarIcon: () => (<Text style={{color: globalColor.primary}}>1</Text>),  title: "thing 1" }} 
+            options={{ tabBarIcon: () => ( <Icon name={'lunch-dining'} color={ globalColor.primary } size={ 25 } /> ),  title: "thing 1" }} 
             component={ Tab1Screen } 
          />
          <Tab.Screen 
             name="Tab2" 
-            options={{ tabBarIcon: () => (<Text style={{color: globalColor.primary}}>2</Text>),  title: "thing 2" }} 
+            options={{ tabBarIcon: () => ( <Icon name={ 'motorcycle' } color={ globalColor.primary } size={ 25 } /> ),  title: "thing 2" }} 
             component={ Tab2Screen } 
          />
          <Tab.Screen 
             name="MaterialTopTabs" 
             options={{ 
-               tabBarIcon: () => (<Text style={{color: globalColor.primary}}>T</Text>),
+               tabBarIcon: () => ( <Icon name={ 'wysiwyg' } color={ globalColor.primary } size={ 25 } /> ),
                header: () => <CustomHeader title="MaterialTopTabs" />
              }} 
             component={ MaterialTopTabNavigation } 
