@@ -1,9 +1,11 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
-import { Tab1Screen, Tab2Screen, Tab3Screen } from "../screens"
+import { Tab1Screen, Tab2Screen } from "../screens"
 import { RootTabParam } from "../types"
 import { settingsTabNavigation } from "../types/navigationTypes"
 import { globalColor } from "../theme"
-import { Text } from "react-native"
+import { Text, } from "react-native"
+import { MaterialTopTabNavigation } from "."
+import { CustomHeader } from "../components"
 
 const Tab = createBottomTabNavigator<RootTabParam>()
 
@@ -40,9 +42,12 @@ export const TabNavigation = () => {
             component={ Tab2Screen } 
          />
          <Tab.Screen 
-            name="Tab3" 
-            options={{ tabBarIcon: ({color}) => (<Text style={{color}}>3</Text>),  title: "thing 3" }} 
-            component={ Tab3Screen } 
+            name="MaterialTopTabs" 
+            options={{ 
+               tabBarIcon: ({color}) => (<Text style={{color}}>T</Text>),
+               header: () => <CustomHeader title="MaterialTopTabs" />
+             }} 
+            component={ MaterialTopTabNavigation } 
          />
       </Tab.Navigator>
    )

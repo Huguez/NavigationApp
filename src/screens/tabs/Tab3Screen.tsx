@@ -5,7 +5,6 @@ import { BurgerButton } from '../../components';
 export const Tab3Screen = () => {
    return (
       <View>
-         <BurgerButton />
          <Text> Tab3Screen </Text>
       </View>
    )

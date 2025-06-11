@@ -1,11 +1,12 @@
 import { Text, View } from 'react-native'
 
-const AbountScreen = () => {
+const AboutScreen = () => {
+
    return (
-      <View>
+      <View >
          <Text> AbountScreen </Text>
       </View>
    )
 }
 
-export default AbountScreen;
+export default AboutScreen;

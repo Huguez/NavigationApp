@@ -1,4 +1,4 @@
-export { default as AboutScreen } from "./about/AbountScreen"
+export { default as AboutScreen } from "./about/AboutScreen"
 export { default as HomeScreen } from "./home/HomeScreen"
 export { default as ProductsScreen } from "./products/ProductsScreen"
 export { default as ProductScreen } from "./products/ProductScreen"

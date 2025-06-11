@@ -1,6 +1,6 @@
 import { DrawerActions, useNavigation } from "@react-navigation/native"
 import { useEffect } from "react"
-import { Pressable, Text, View } from "react-native"
+import { Pressable, Text } from "react-native"
 
 export const BurgerButton = () => {
    const navigation = useNavigation()
